@@ -15,6 +15,7 @@ import java.util.Scanner;
  */
 public class StudentManger {
     public static void main(String[] args) {
+        System.out.println("-----R9000P主机-----");
 
         ArrayList<Student> arrayList=new ArrayList<Student>();
         Scanner sc = new Scanner(System.in);
