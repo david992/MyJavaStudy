@@ -99,11 +99,11 @@ public class TeacherController {
             System.out.println("暂无老师信息，请添加后查看");
             return;
         }else{
-            System.out.println("学号\t\t姓名\t年龄\t生日");
+            System.out.println("学号 \t姓名 \t年龄 \t生日");
             for (int i = 0; i < teas.length; i++) {
                 Teacher tea = teas[i];
                 if( tea != null){
-                    System.out.println(tea.getId()+"\t\t"+tea.getName()+"\t"+tea.getAge()+"\t\t"+tea.getBirthday());
+                    System.out.println(tea.getId()+" \t"+tea.getName()+" \t"+tea.getAge()+" \t"+tea.getBirthday());
 
                 }
             }

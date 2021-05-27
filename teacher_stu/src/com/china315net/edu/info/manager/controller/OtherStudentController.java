@@ -13,8 +13,10 @@ import java.util.Scanner;
  * @Date: 2021-05-19 14:57
  * @Version: V1.0
  */
-public class StudentController extends BaseStudentController{
+public class OtherStudentController extends BaseStudentController{
+
     private Scanner sc = new Scanner(System.in);
+
     @Override
     public Student inputStudentInfo( String id){
         System.out.println("请输入学生姓名");
@@ -23,11 +25,7 @@ public class StudentController extends BaseStudentController{
         String age = sc.next();
         System.out.println("请输入学生生日");
         String birthday = sc.next();
-        Student stu = new Student();
-        stu.setName(name);
-        stu.setName(id);
-        stu.setName(age);
-        stu.setName(birthday);
+        Student stu = new Student(id, name, age, birthday);
         return stu;
     }
 }

@@ -13,7 +13,12 @@ import com.china315net.edu.info.manager.domain.Teacher;
  */
 public class TeacherDao {
     private static Teacher[] teas = new Teacher[5];
-
+    static {
+        Teacher david = new Teacher("0001", "david", "25", "1995-8-4");
+        Teacher Jinx = new Teacher("0002", "jinx", "18", "2001-8-4");
+        teas[0]=david;
+        teas[1]=Jinx;
+    }
     public static Teacher[] findTeacher() {
         return teas;
     }

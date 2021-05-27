@@ -8,52 +8,11 @@ package com.china315net.edu.info.manager.domain;
  * @Date: 2021-05-27 11:41
  * @Version: V1.0
  */
-public class Teacher {
-    private String id;
-    private String name;
-    private String age;
-    private String birthday;
-
-    public Teacher(String id, String name, String age, String birthday) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.birthday = birthday;
-    }
-
+public class Teacher extends Person {
     public Teacher() {
     }
 
-    public String getId() {
-        return id;
+    public Teacher(String id, String name, String age, String birthday) {
+        super(id, name, age, birthday);
     }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
 }

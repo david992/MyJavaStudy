@@ -13,7 +13,12 @@ import com.china315net.edu.info.manager.domain.Student;
 public class StudentDao {
 
     private static Student[] stus = new Student[5];
-
+    static {
+        Student david = new Student("0001", "david", "25", "1995-8-4");
+        Student Jinx = new Student("0002", "jinx", "18", "2001-8-4");
+        stus[0]=david;
+        stus[1]=Jinx;
+    }
     public boolean addStudent(Student student) {
         int index = -1;
         for (int i = 0; i < stus.length; i++) {
