@@ -1,6 +1,7 @@
 package com.china315net.edu.info.manager.entry;
 
 import com.china315net.edu.info.manager.controller.StudentController;
+import com.china315net.edu.info.manager.controller.TeacherController;
 
 import java.util.Scanner;
 
@@ -27,6 +28,8 @@ public class InforManagerEntry {
                 studentController.start();
                 break;
             case "2":
+                TeacherController teacherController = new TeacherController();
+                teacherController.start();
                 System.out.println("老师管理");
                 break;
             case "3":
