@@ -2,6 +2,8 @@ package com.china315net.edu.info.manager.dao;
 
 import com.china315net.edu.info.manager.domain.Student;
 
+import java.util.ArrayList;
+
 /**
  * @Program: test
  * @ClassName: StudentDao
@@ -10,46 +12,37 @@ import com.china315net.edu.info.manager.domain.Student;
  * @Date: 2021-05-19 14:57
  * @Version: V1.0
  */
-public class StudentDao implements BaseStudentDao {
+public class OtherStudentDao implements BaseStudentDao {
 
-    private static Student[] stus = new Student[5];
+    private static  ArrayList <Student> stus = new ArrayList<>();
     static {
         Student david = new Student("0001", "david", "25", "1995-8-4");
         Student Jinx = new Student("0002", "jinx", "18", "2001-8-4");
-        stus[0]=david;
-        stus[1]=Jinx;
+        stus.add(david);
+        stus.add(Jinx);
     }
     public boolean addStudent(Student student) {
-        int index = -1;
-        for (int i = 0; i < stus.length; i++) {
-            Student stu = stus[i];
-            if(stu == null){
-                index = i ;
-                break;
-            }
-        }
-        if (index == -1){
-            //添加失败  装满了 5个
-            return false;
-        }else{
-            stus[index] = student;
-            return true;
-        }
+        stus.add(student);
+        return true;
 
     }
 
     public Student[] findStudent()  {
-        return stus;
+        Student[] students = new Student[stus.size()];
+        for (int i = 0; i < students.length; i++) {
+            students[i]=stus.get(i);
+        }
+        return students;
     }
 
     public void deleteStudentById(String delId) {
         int index = getIndex(delId);
-        stus[index] = null;
+        stus.remove(index);
     }
     public int getIndex(String id){
         int index = -1;
-        for (int i = 0; i < stus.length; i++) {
-            Student stu =stus[i];
+        for (int i = 0; i < stus.size(); i++) {
+            Student stu =stus.get(i);
             if(stu != null && stu.getId().equals(id)){
                 index = i;
                 break;
@@ -60,6 +53,6 @@ public class StudentDao implements BaseStudentDao {
 
     public void updateStudentById(String upId, Student stu) {
         int index = getIndex(upId);
-        stus[index] = stu;
+        stus.set(index,stu);
     }
 }

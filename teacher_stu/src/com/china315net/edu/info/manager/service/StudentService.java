@@ -1,7 +1,10 @@
 package com.china315net.edu.info.manager.service;
 
+import com.china315net.edu.info.manager.dao.BaseStudentDao;
+import com.china315net.edu.info.manager.dao.OtherStudentDao;
 import com.china315net.edu.info.manager.dao.StudentDao;
 import com.china315net.edu.info.manager.domain.Student;
+import com.china315net.edu.info.manager.factory.StudentDaoFactory;
 
 /**
  * @Program: test
@@ -13,8 +16,8 @@ import com.china315net.edu.info.manager.domain.Student;
  */
 public class StudentService {
 
-    private StudentDao studentDao = new StudentDao();
-
+    //private OtherStudentDao studentDao = new OtherStudentDao();
+    private BaseStudentDao studentDao = StudentDaoFactory.getStudentDao();
     public  boolean isExists(String id) {
         Student[] stus = studentDao.findStudent();
         boolean isexists = false;
