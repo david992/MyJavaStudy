@@ -67,11 +67,13 @@ public class StudentServlet extends HttpServlet {
             System.out.println("获取多个请求头，根据单个名称获取值"+req.getHeader(s));
         }
 
+        System.out.println("****************************************");
         System.out.println("*************获取请求参数信息**************");
+        System.out.println("****************************************");
         String username1 = req.getParameter("username");
         System.out.println("根据名称获取属性值"+username1);
 
-        String[] hobbies = req.getParameterValues("hobby");
+        String[] hobbies = req.getParameterValues("hobbies");
         for (String hobby : hobbies) {
             System.out.println(hobby);
         }
@@ -93,7 +95,7 @@ public class StudentServlet extends HttpServlet {
 
 
         //采用字符输出
-        BufferedWriter bw = new BufferedWriter(new FileWriter("E:\\IdeaProjects\\MyJavaStudy\\Servlet_Demo\\web\\stu.txt",true) );
+        BufferedWriter bw = new BufferedWriter(new FileWriter("E:\\Idea Projects\\MyJavaStudy\\Servlet_Demo\\web\\stu.txt",true) );
         bw.write(username+","+age+","+grade);
         bw.newLine();
         bw.close();

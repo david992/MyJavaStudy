@@ -32,7 +32,7 @@
     <servlet>
         <servlet-name>myHttpServlet2</servlet-name>
         <servlet-class>com.example.demo.MyHttpServlet2</servlet-class>
-        <!--        servletconfig配置-->
+        <!--        ServletConfig配置-->
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
@@ -54,8 +54,9 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>/addStudent.html</welcome-file>
+        <welcome-file>/index.jsp</welcome-file>
     </welcome-file-list>
+
     <servlet>
         <servlet-name>addStudent</servlet-name>
         <servlet-class>com.studentservlet.StudentServlet</servlet-class>
@@ -64,4 +65,14 @@
         <servlet-name>addStudent</servlet-name>
         <url-pattern>/addstudent</url-pattern>
     </servlet-mapping>
+
+<!--   全局 ServletContext-->
+    <context-param>
+        <param-name>globalEncoding</param-name>
+        <param-value>UTF-8</param-value>
+    </context-param>
+    <context-param>
+        <param-name>globalDesc</param-name>
+        <param-value>this is a servletcontext</param-value>
+    </context-param>
 </web-app>

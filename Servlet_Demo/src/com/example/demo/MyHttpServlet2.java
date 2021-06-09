@@ -60,6 +60,6 @@ public class MyHttpServlet2 extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        System.out.println("对象初始化成功");
+        System.out.println("com.example.demo.MyHttpServlet2对象初始化成功");
     }
 }
