@@ -22,7 +22,7 @@ public class MyHttpServlet1 extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("注解执行ing");
+        System.out.println("自动注解开发执行ing");
     }
 
     @Override

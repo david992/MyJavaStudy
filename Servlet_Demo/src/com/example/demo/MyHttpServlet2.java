@@ -30,6 +30,7 @@ public class MyHttpServlet2 extends HttpServlet {
                 e.printStackTrace();
             }
             String path = req.getRequestURI();
+            //字符串切割
             path = path.substring(path.lastIndexOf("/"));
             if("/vip".equals(path)){
                  info = "您是超级会员0.8折，折后"+(money * 0.8)+"元";
