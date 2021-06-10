@@ -37,36 +37,6 @@ public class StudentServlet05 extends HttpServlet {
 
     }
 
-    private void method2(Map<String, String[]> parameterMap, Student stu) {
-        for(String key: parameterMap.keySet()){
-            String[] values = parameterMap.get(key);
-            PropertyDescriptor pd = null;
-            try {
-                //获取student对象的属性描述器
-                pd = new PropertyDescriptor(key, stu.getClass());
-                //获取对于setfangfa
-                Method writeMethod = pd.getWriteMethod();
-                //执行方法
-                if(values.length>1){
-                    writeMethod.invoke(stu,(Object) values);
-                }else{
-                    writeMethod.invoke(stu,values);
-                }
-            } catch ( Exception e) {
-                e.printStackTrace();
-            }
-
-        }
-    }
-
-    private void method1(HttpServletRequest req) {
-        String username = req.getParameter("username");
-        String age = req.getParameter("age");
-        String grade = req.getParameter("grade");
-        String[] hobbies = req.getParameterValues("hobby");
-        Student student = new Student(username,age,grade,hobbies);
-        System.out.println(student);
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
