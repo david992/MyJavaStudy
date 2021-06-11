@@ -13,5 +13,11 @@ git remote add origin <url>
 并行：同一时刻，多个指令在多个cpu上同时进行
 
 ServletContext 应用域 整个应用之间共享数据
-ServletRequset 请求域 在当前请求或请求转发之间共享数据
+ServletRequset 请求域 在当前请 求或请求转发之间共享数据
 HttpSession    会话域 在当前会话返回内数据共享
+PageContext    页面域 在当前页面使用
+
+MVC
+model 封装数据
+view 视图 
+controller 控制器 用于处理请求和响应

@@ -1,19 +1,42 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: win10
   Date: 2021/6/4
   Time: 20:09
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="/addStudent.html" pageEncoding="GBK" %>
 <html>
   <head>
-    <title>å­¦ç”Ÿç®¡ç†ç³»ç»Ÿé¦–é¡µ</title>
+
+    <title>Ñ§Éú¹ÜÀíÏµÍ³Ê×Ò³</title>
   </head>
   <body>
-<%--  è·³è½¬é¡µé¢--%>
-  <a href="/Servlet_Demo_war_exploded/addStudent.html">æ·»åŠ å­¦ç”Ÿ</a>
-<%--  è·³è½¬åŠŸèƒ½ç±»--%>
-  <a href="/Servlet_Demo_war_exploded/addstudentservletdemo02">æŸ¥çœ‹å­¦ç”Ÿ</a>
+<%--  <% int res = 1/0;%>--%>
+  <% ArrayList list = new ArrayList();%>
+
+
+<%--9´óÒþÊ½¶ÔÏó--%>
+<% out.print("Sss");
+pageContext.getRequest();
+%>
+
+<%@include file="/addStudent.html"%>
+
+
+<%--  Ìø×ªÒ³Ãæ--%>
+  <a href="/Servlet_Demo_war_exploded/addStudent.html">Ìí¼ÓÑ§Éú</a>
+<%--  Ìø×ª¹¦ÄÜÀà--%>
+  <a href="/Servlet_Demo_war_exploded/addstudentservletdemo02">²é¿´Ñ§Éú</a>
+
+  <%--´úÂë¿é --%>
+  <% out.println("<br>ÕâÊÇ´úÂë¿é<br>"); %>
+  <%--±í´ïÊ½ --%>
+  <%="±í´ïÊ½<br>" %>
+  <%-- ÉêÃ÷    ¼Ó!±íÊ¾³ÉÔ±±äÁ¿/³ÉÔ±·½·¨
+              ²»¼Ó£¡±íÊ¾¾Ö²¿±äÁ¿/£¨·½·¨ÖÐµÄ·½·¨£©
+   --%>
+  <%! String s="±äÁ¿";%>
+  <%=s%>
   </body>
 </html>
