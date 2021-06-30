@@ -27,8 +27,8 @@ Dao层传统实现方式
 
 MyBatis接口代理实现dao层
 1.映射配置文件中的名称空间必须和dao层接口的全类名相同
-![mybatis接口实现dao层.png](mybatis接口实现dao层.png)
+![img.png](mybatis接口实现dao层.png)
 2.映射配置文件中的增删改查标签的id属性必须和dao层接口的方法名相同
 3.映射配置文件中的增删改查标签的parametertype属性必须和dao层接口方法参数相同
 4.映射配置文件中的增删改查标签的resulttype属性必须的dao层接口返回值相同
-![mybatis接口实现dao层_2.png](mybatis接口实现dao层_2.png)
+![img_1.png](mybatis接口实现dao层_2.png)
