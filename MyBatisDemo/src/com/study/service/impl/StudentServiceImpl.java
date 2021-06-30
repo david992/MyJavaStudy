@@ -202,4 +202,71 @@ public class StudentServiceImpl implements StudentService {
         }
         return result;
     }
+
+    @Override
+    public List<Student> selectCondition(Student stu) {
+
+        InputStream rs=null;
+        SqlSession sqlSession = null;
+        List<Student> students =null;
+        try {
+            //加载核心配置文件
+            rs = Resources.getResourceAsStream("MyBatisConfig.xml");
+            //获取sqlsession工厂对象
+            SqlSessionFactory sqlSessionFactory  = new SqlSessionFactoryBuilder().build(rs);
+            //获取selsession对象
+            sqlSession = sqlSessionFactory.openSession(true);
+            //获取studentmapper接口的实现类对象
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            students = mapper.selectCondition(stu);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            if (sqlSession != null){
+                sqlSession.close();
+            }
+            if(rs != null){
+                try {
+                    rs.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return students;
+    }
+
+    @Override
+    public List<Student> selectByIds(List<Integer> ids) {
+
+        InputStream rs=null;
+        SqlSession sqlSession = null;
+        List<Student> students =null;
+        try {
+            //加载核心配置文件
+            rs = Resources.getResourceAsStream("MyBatisConfig.xml");
+            //获取sqlsession工厂对象
+            SqlSessionFactory sqlSessionFactory  = new SqlSessionFactoryBuilder().build(rs);
+            //获取selsession对象
+            sqlSession = sqlSessionFactory.openSession(true);
+            //获取studentmapper接口的实现类对象
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            students = mapper.selectByIds(ids);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            if (sqlSession != null){
+                sqlSession.close();
+            }
+            if(rs != null){
+                try {
+                    rs.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return students;    }
 }

@@ -26,4 +26,8 @@ public interface StudentService {
 
     public abstract Integer delete(Integer id);
 
+    public abstract List<Student> selectCondition(Student stu);
+
+    public abstract List<Student> selectByIds(List<Integer> ids);
+
 }

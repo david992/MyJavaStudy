@@ -20,6 +20,11 @@
         <package name="com.study.demo"/>
     </typeAliases>
 
+    <!--继承分页助手插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
 <!--    配置数据库环境 可以有多个
         default 指定使用哪个数据库-->
     <environments default="mysql">

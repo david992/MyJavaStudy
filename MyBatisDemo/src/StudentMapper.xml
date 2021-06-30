@@ -7,9 +7,16 @@
 <!--
     mapper：核心根标签
     namespace：属性：名称空间
-
 -->
 <mapper namespace="com.study.mapper.StudentMapper">
+<!--    sql片段抽取
+        通过include标签使用
+        <include refid="select-from"/>
+
+    -->
+    <sql id="select-from">
+        select * from student
+    </sql>
 <!--
     select：查询功能标签
     id：唯一标识
@@ -17,7 +24,8 @@
     parameterType：指定参数映射对象类型
 -->
     <select id="selectAll" resultType="student">
-        select * from student;
+
+        <include refid="select-from"/>
     </select>
     <select id="selectById" parameterType="java.lang.Integer" resultType="student">
         select * from student where id = #{id}
@@ -31,6 +39,36 @@
     </update>
     <delete id="delete" parameterType="java.lang.Integer">
         delete from student where id =#{id}
-
     </delete>
+
+    <select id="selectCondition" resultType="student" parameterType="student">
+        select * from student
+        <where>
+            <if test="id != null">
+                id =  #{id}
+            </if>
+            <if test="name != null">
+                and name =  #{name}
+            </if>
+            <if test="age != null">
+                and age =  #{age}
+            </if>
+        </where>
+    </select>
+
+<!--    connection 参数容器类型(list-集合 array-数组)
+        open       sql开始语句
+        close      sql结束语句
+        item       参数变量名
+        separator  分隔符  -->
+ <select id="selectByIds" resultType="student" parameterType="list">
+     select * from student
+    <where>
+        <foreach collection="list" open="id in (" close=")" item="id" separator=",">
+            #{id}
+        </foreach>
+    </where>
+
+
+ </select>
 </mapper>
