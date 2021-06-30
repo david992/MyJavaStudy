@@ -2,22 +2,47 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
+
 <configuration>
+
+    <!--    引入数据库链接的配置文件-->
+    <properties resource="jdbc.properties"/>
+
+<!--    <settings>-->
+<!--        &lt;!&ndash; 开启log4j来记录日志 &ndash;&gt;-->
+<!--        <setting name="logImpl" value="log4j"/>-->
+<!--    </settings>-->
+
+
+<!--    别名-->
+    <typeAliases>
+        <typeAlias type="com.study.demo.Student" alias="student"/>
+        <package name="com.study.demo"/>
+    </typeAliases>
+
+<!--    配置数据库环境 可以有多个
+        default 指定使用哪个数据库-->
     <environments default="mysql">
+<!--        配置环境 id ：唯一标志-->
         <environment id="mysql">
-<!--            事务支持-->
+<!--            事务支持
+                type：采用jdbc默认实务-->
             <transactionManager type="JDBC"></transactionManager>
-<!--            数据源-->
+<!--            数据源
+               type：连接池-->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/fruit"/>
-                <property name="username" value="root"/>
-                <property name="password" value="123456"/>
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
             </dataSource>
-            
+
         </environment>
     </environments>
+<!--引入映射配置文件-->
     <mappers>
+<!--引入指定的映射配置文件 resource ：指定映射配置文件路径（名称）-->
         <mapper resource="StudentMapper.xml"/>
     </mappers>
+
 </configuration>

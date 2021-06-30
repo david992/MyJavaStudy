@@ -41,8 +41,60 @@ public class StudentTest01 {
             System.out.println(student);
         }
         //释放资源
+        sqlSession.close();
         rs.close();
     }
+    @Test
+    public void selectById() throws IOException {
+        InputStream rs = Resources.getResourceAsStream("MyBatisConfig.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(rs);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        Object o = sqlSession.selectOne("StudentMapper.selectById", 1);
+        System.out.println(o);
+        sqlSession.close();
+        rs.close();
 
+    }
+    @Test
+    public void insert() throws IOException {
+        InputStream resourceAsStream = Resources.getResourceAsStream("MyBatisConfig.xml");
+        SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        SqlSession sqlSession = build.openSession();
+        Student hang = new Student(6, "hang", 25);
+        int insert = sqlSession.insert("StudentMapper.insert", hang);
+        sqlSession.commit();
+        System.out.println(insert);
+        sqlSession.close();
+        resourceAsStream.close();
 
+    }
+
+    @Test
+    public void update() throws IOException {
+        InputStream rs = Resources.getResourceAsStream("MyBatisConfig.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(rs);
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+        Student hang = new Student(6, "xu hang", 25);
+        int update = sqlSession.update("StudentMapper.update", hang);
+//        sqlSession.commit();
+
+        System.out.println(update);
+        sqlSession.close();
+        rs.close();
+
+    }
+    @Test
+    public void delete() throws IOException {
+        InputStream rs = Resources.getResourceAsStream("MyBatisConfig.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(rs);
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+        Student hang = new Student(6, "xu hang", 25);
+        int delete = sqlSession.delete("StudentMapper.delete", hang);
+//        sqlSession.commit();
+
+        System.out.println(delete);
+        sqlSession.close();
+        rs.close();
+
+    }
 }
