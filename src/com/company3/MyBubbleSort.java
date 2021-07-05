@@ -30,21 +30,20 @@ public class MyBubbleSort {
         int right0 = right;
         int baseNumber = arr[left0];
         while(left != right){
-            //从右边找比基数小的
+            //1.从右边找比基数小的
             while(arr[right] >= baseNumber && right >left){
                 right--;
             }
-            //从左边找比基数大的
+            //2.从左边找比基数大的
             while (arr[left] <= baseNumber && right > left){
                 left++;
             }
-
-            //交换位置
+            //3.交换位置
             int temp =arr[left];
             arr[left]=arr[right];
             arr[right]=temp;
         }
-        //基准数归位
+        //4.基准数归位
         int temp = arr[left];
         arr[left] = arr[left0];
         arr[left0] = temp;

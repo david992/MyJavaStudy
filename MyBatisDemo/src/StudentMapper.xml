@@ -6,7 +6,7 @@
 
 <!--
     mapper：核心根标签
-    namespace：属性：名称空间
+    namespace：属性：名称空间 接口位置
 -->
 <mapper namespace="com.study.mapper.StudentMapper">
 <!--    sql片段抽取

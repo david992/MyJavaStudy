@@ -17,7 +17,7 @@
 <!--    别名-->
     <typeAliases>
         <typeAlias type="com.study.demo.Student" alias="student"/>
-        <package name="com.study.demo"/>
+        <package name="com.bean"/>
     </typeAliases>
 
     <!--继承分页助手插件-->
@@ -44,10 +44,19 @@
 
         </environment>
     </environments>
-<!--引入映射配置文件-->
+
+    <!--    配置映射关系-->
+    <!--引入映射配置文件-->
     <mappers>
 <!--引入指定的映射配置文件 resource ：指定映射配置文件路径（名称）-->
         <mapper resource="StudentMapper.xml"/>
+        <mapper resource="com/one2one/OneToOneMapper.xml"/>
+        <mapper resource="com/one2more/OneToMoreMapper.xml"/>
+        <mapper resource="com/manytomany/ManyToManyMapper.xml"/>
+
+<!--        指定mapper接口的所在路径-->
+        <package name="com.zhujie"/>
     </mappers>
+
 
 </configuration>
