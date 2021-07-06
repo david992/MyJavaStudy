@@ -19,6 +19,7 @@ import java.util.List;
 public interface StudentsMapper {
     @Select("select distinct s.id,s.name,s.age from students s, stu_cr sc where sc.sid = s.id " )
     @Results({
+            // column 中的字段的值 赋给对象中的property属性
             @Result(column = "id",property = "id"),
             @Result(column = "name",property = "name"),
             @Result(column = "age",property = "age"),
