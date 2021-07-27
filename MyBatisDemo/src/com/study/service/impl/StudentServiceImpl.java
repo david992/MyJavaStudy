@@ -26,7 +26,7 @@ public class StudentServiceImpl implements StudentService {
     /*
      * 业务层实现类，业务层调用持久层功能，所以需要创建持久层对象
      */
-    //
+
 //    创建持久层对象
 //    private StudentMapper mapper = new StudentMapperImpl();
 

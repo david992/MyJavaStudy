@@ -32,3 +32,32 @@ MyBatis接口代理实现dao层
 3.映射配置文件中的增删改查标签的parametertype属性必须和dao层接口方法参数相同  
 4.映射配置文件中的增删改查标签的resulttype属性必须的dao层接口返回值相同  
 ![img_1.png](mybatis接口实现dao层_2.png)  
+
+Radis 
+单条数据操作 set key  value   
+多条数据操作 mset key value  
+设置数值数据增加指定范围的值  incr key / incrby key increment / incrbyfloat key increment
+设置数值数据减少指定范围的值  decr key / decrby key  decr key    
+设置数据生命周期 setex key seconds value / psetex key millseconds value   
+表名：主键名：主键值：字段名 | 字段名对应数据   
+           键值         | 数据值   
+
+hash类型数据基本操作   
+添加修改  hset key field value  
+获取数据 hget key field / hgetall key  
+删除数据 hdel key field1  
+设置field的值 若存在则不做任何操作 hstnx key field value  
+设置数值数据增加指定范围的值   hincrby key field increment / hincrbyfloat key increment   
+
+list类型数据  
+添加修改数据 lpush/rpush key value  
+获取数据 lrange key start end / lindex key index / llen key  
+获取并移除数据 lpop /rpop key  
+
+set类型数据  
+获取集合数据总量 scard key  
+判断集合中是否含有指定数据 sismember key member  
+随机获取集合中指定数量的数据 srandmember key count  
+获取某个数据并将该数据移除集合 spop key count  
+
+

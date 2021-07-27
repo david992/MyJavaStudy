@@ -13,6 +13,5 @@ import java.util.List;
  * @Version: V1.0
  */
 public interface OneToOneMapper {
-
     public abstract List<Card> selectAll();
 }

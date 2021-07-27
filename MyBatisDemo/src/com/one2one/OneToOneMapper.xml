@@ -25,7 +25,7 @@
                 property 被包含对象的变量名
                 javaType 被包含对象数据类型-->
         <association property="p" javaType="person">
-            <id column="id" property="id"/>
+            <id column="pid" property="id"/>
             <result column="name" property="name"/>
             <result column="age" property="age"/>
         </association>
