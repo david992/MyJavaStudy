@@ -60,4 +60,15 @@ set类型数据
 随机获取集合中指定数量的数据 srandmember key count  
 获取某个数据并将该数据移除集合 spop key count  
 
+key基本操作  
+删除指定key del key  
+获取key是否存在 exists key  
+获取key类型  type key  
+排序 sort  
+改名 rename / renamenx key newkey  
+为指定key设置有效期 expire key seconds / pexpire key milliseconds / expireat key timestamp / pexpireat key milliseconds-timestamp  
+获取key有效时间 ttl / pttl key  
+切换为永久性 persist key  
+
+
 
