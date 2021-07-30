@@ -20,7 +20,9 @@ public class JDBCdemo01 {
         /*
         * DriverManager 驱动管理对象
         * */
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fruit", "root", "123456");
+        Connection conn = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/fruit",
+                "root", "123456");
 
         //4.获取执行者对象
 

@@ -55,13 +55,16 @@ list类型数据
 获取并移除数据 lpop /rpop key  
 
 set类型数据  
+添加修改数据 sadd key value1 value2  
+获取数据 smembers key  
+删除指定 srem key  
 获取集合数据总量 scard key  
 判断集合中是否含有指定数据 sismember key member  
 随机获取集合中指定数量的数据 srandmember key count  
 获取某个数据并将该数据移除集合 spop key count  
 
 key基本操作  
-删除指定key del key  
+删除指定 del key  
 获取key是否存在 exists key  
 获取key类型  type key  
 排序 sort  

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MyJedis:war">
+    <output-path>$PROJECT_DIR$/MyJedis/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>MyJedis</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="MyJedis-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="MyJedis:war exploded" />
+    </root>
+  </artifact>
+</component>
