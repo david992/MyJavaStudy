@@ -26,7 +26,7 @@ public class StudentTest01 {
         //加载核心配置文件
         InputStream rs = Resources.getResourceAsStream("MyBatisConfig.xml");
 
-        //获取sqlsession工厂对象
+        //获取SqlSessionFactory工厂对象
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(rs);
 
 
