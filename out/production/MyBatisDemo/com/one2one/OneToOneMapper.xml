@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--mybatis的DTD约束-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.table01.OneToOneMapper">
+    <!--    sql片段抽取
+            通过include标签使用
+            <include refid="select-from"/> -->
+    <sql id="select-from">
+        select * from
+    </sql>
+<!--    配置字段和实体对象属性的映射关系
+        id   唯一标识   type 给那个实体对象配置-->
+    <resultMap id="oneToOne" type="card">
+<!--    主键用id  其余的用result
+        column 中的字段的值 赋给card对象中的property属性-->
+        <id column="cid" property="id"/>
+        <result column="number" property="number"/>
+
+
+<!--        association  配置被包含对象的映射关系
+                property 被包含对象的变量名
+                javaType 被包含对象数据类型-->
+        <association property="p" javaType="person">
+            <id column="pid" property="id"/>
+            <result column="name" property="name"/>
+            <result column="age" property="age"/>
+        </association>
+    </resultMap>
+    <select id="selectAll" resultMap="oneToOne">
+        select c.id cid,number,pid,name,age from card c,person p where c.pid = p.id
+    </select>
+
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--mybatis的DTD约束-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    namespace="com.table02.OneToMoreMapper" 配置接口位置
+    -->
+<mapper namespace="com.table02.OneToMoreMapper">
+    <resultMap id="oneToMore" type="classes">
+        <id column="cid" property="id"/>
+        <result column="cname" property="name"/>
+
+        <!--   配置被包含的集合对象映射关系
+                property 被包含对象变量名
+                ofType 被包含对象的实际数据类型
+             -->
+        <collection property="students" ofType="students">
+            <id column="sid" property="id"/>
+            <result column="sname" property="name"/>
+            <result column="sage" property="age"/>
+        </collection>
+    </resultMap>
+    <select id="selectAll" resultMap="oneToMore">
+        select c.id cid,c.name cname, s.id sid, s.name sname,s.age sage from classes c,students s where c.id=s.cid
+    </select>
+</mapper>
