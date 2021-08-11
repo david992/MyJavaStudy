@@ -1,2 +1,0 @@
-0:0:0:0:0:0:0:1 - - [05/Aug/2021:17:09:55 +0800] "GET /MyWebMaven HTTP/1.1" 404 - http-bio-8080-exec-1 0
-0:0:0:0:0:0:0:1 - - [05/Aug/2021:17:15:17 +0800] "GET /MyWebMaven HTTP/1.1" 404 - http-bio-8080-exec-4 0

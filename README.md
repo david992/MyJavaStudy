@@ -17,6 +17,9 @@ ServletRequset 请求域 在当前请 求或请求转发之间共享数据
 HttpSession    会话域 在当前会话返回内数据共享  
 PageContext    页面域 在当前页面使用  
 
+基本数据类型 byte int short long char double boolean float  
+引用数据类型 数组 类 接口  
+
 MVC
 model 封装数据  
 view 视图   
@@ -74,4 +77,8 @@ key基本操作
 切换为永久性 persist key  
 
 
+Spring是什么  （集成）
+Spring是分层的JavaSE/EE应用full-stack轻量级开源框架   
+最底层是核心容器，在核心容器上提供了aop等中间技术，再在这之上集成了其他的技术如dao层的jdbc、mybatis等，web层的servlet、websocket等  
+![img.png](spring架构图.png)  
 

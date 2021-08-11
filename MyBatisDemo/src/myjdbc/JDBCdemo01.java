@@ -25,8 +25,8 @@ public class JDBCdemo01 {
                 "root", "123456");
 
         //4.获取执行者对象
-
         Statement stmt = conn.createStatement();
+
         //5.执行sql语句并接收结果
         String sql = "select * from student";
         ResultSet rs = stmt.executeQuery(sql);
