@@ -24,14 +24,16 @@
     parameterType：指定参数映射对象类型
 -->
     <select id="selectAll" resultType="student">
-
         <include refid="select-from"/>
     </select>
+
     <select id="selectById" parameterType="java.lang.Integer" resultType="student">
         select * from student where id = #{id}
     </select>
+
     <insert id="insert" parameterType="student">
         insert into student (id,name,age) values(#{id},#{name},#{age})
+
     </insert>
     <update id="update" parameterType="student">
     update student set name =#{name},age=#{age} where id =#{id}

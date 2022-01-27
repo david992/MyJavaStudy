@@ -17,7 +17,16 @@ ServletRequset 请求域 在当前请 求或请求转发之间共享数据
 HttpSession    会话域 在当前会话返回内数据共享  
 PageContext    页面域 在当前页面使用  
 
-基本数据类型 byte int short long char double boolean float  
+
+基本数据类型  -*- bit(位)-byte(字节) 1byte = 1B = 8bit -*-  
+byte    8位  
+short   16位  
+int     32位  
+float   32位  
+long    64位   
+double  64位  
+boolean true/false  
+char    16位 单引号赋值 Unicode码  
 引用数据类型 数组 类 接口  
 
 MVC
@@ -46,7 +55,7 @@ Radis
            键值         | 数据值   
 
 hash类型数据基本操作   
-添加修改  hset key field value  
+添加修改 hset key field value  
 获取数据 hget key field / hgetall key  
 删除数据 hdel key field1  
 设置field的值 若存在则不做任何操作 hstnx key field value  

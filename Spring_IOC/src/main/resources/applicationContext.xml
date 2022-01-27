@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    ②创建spring控制资源-->
+    <bean id="userService" name="userService2,userService3" class="com.study.service.impl.UserServiceImpl">
+    <!--    name 对应bean中的属性名 要求该属性必须提供可访问的set方法
+                （严格规范为此名称是set方法对应的名称）   -->
+    <!--    ref 设定引用类型属性对应bean的id 不能与value同时使用    -->
+    <!--    value 设定基本数据类型属性对应的值 不能与ref同时使用    -->
+        <property name="userDao" ref="userDao"></property>
+        <property name="num" value="666"></property>
+    </bean>
+
+    <!--  scope 用于控制bean创建后的对象是否是单例的   / scope="prototype"非单例 默认singleton 单例-->
+    <bean id="userService4" scope="prototype" init-method="init" destroy-method="destroy" class="com.study.service.impl.UserServiceImpl"></bean>
+
+    <!--  配置静态工厂类创建bean
+            factory-method:创建方法是什么
+    -->
+    <bean id="userService5" class="com.study.service.UserServiceFactory" factory-method="getService"></bean>
+
+    <!--  配置实例工厂类创建bean  -->
+    <bean id="Factory2" class="com.study.service.UserServiceFactory2"></bean>
+    <bean  id="userService6" factory-bean="Factory2"  factory-method="getService"></bean>
+
+
+
+    <!--  222.将需要注入的资源申明为bean  -->
+    <bean id="userDao" class="com.study.dao.impl.UserDaoImpl">
+        <constructor-arg index="2" value="123"></constructor-arg>
+        <constructor-arg index="1" value="root"></constructor-arg>
+        <constructor-arg index="0" value="com.mysql.jdbc.Driver"></constructor-arg>
+    </bean>
+
+<!--    构造方法注入-->
+    <bean id="userServiceGouZao" class="com.study.service.impl.UserServiceImpl">
+        <constructor-arg name="userDao" ref="userDao"></constructor-arg>
+        <constructor-arg name="Num" value="999"></constructor-arg>
+    </bean>
+
+
+
+<!--    集合注入-->
+    <bean id="userServiceList" class="com.study.service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
+
+<!--    p标签简化-->
+<!--    #{spEL表达式}  ${properties配置文件参数}-->
+    <bean
+            id="userServiceList1"
+            class="com.study.service.impl.UserServiceImpl"
+            p:userDao-ref="userDao"
+            p:bookDao-ref="bookDao"
+    />
+
+    <bean id="bookDao" class="com.study.dao.impl.BookDaoImpl">
+        <property name="al">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="properties">
+            <props>
+                 <prop key="name">david</prop>
+                 <prop key="value">111</prop>
+            </props>
+        </property>
+        <property name="arr">
+            <array>
+                <value>111</value>
+                <value>2222</value>
+            </array>
+        </property>
+        <property name="hs">
+            <set>
+                <value>david</value>
+                <value>33333</value>
+            </set>
+        </property>
+        <property name="hm">
+            <map>
+                <entry key="name" value="david" />
+                <entry key="value" value="d44444" />
+            </map>
+
+        </property>
+
+    </bean>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/fruit"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="123456"></property>
+
+    </bean>
+
+    <import resource="applicationContext.xml"></import>
+</beans>

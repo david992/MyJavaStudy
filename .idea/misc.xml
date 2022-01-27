@@ -12,6 +12,7 @@
       <list>
         <option value="$PROJECT_DIR$/MyMaven/pom.xml" />
         <option value="$PROJECT_DIR$/MyWebMaven/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_IOC/pom.xml" />
       </list>
     </option>
   </component>

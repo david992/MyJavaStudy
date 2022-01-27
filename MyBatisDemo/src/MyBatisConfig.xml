@@ -27,7 +27,6 @@
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
     </plugins>
-
     <!--在MyBatis中可以配置多套环境，然后通过default来控制采用哪套环境，让配置变得灵活-->
     <environments default="mysql">
         <!--配置测试环境，不同的环境不同的id名字-->
