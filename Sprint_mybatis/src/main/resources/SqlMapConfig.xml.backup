@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC
+        "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+<!--    <settings>-->
+<!--        &lt;!&ndash;如果遇到下划线，就会将下划线后的第一个字母转换为大写，并删除下划线&ndash;&gt;-->
+<!--        <setting name="mapUnderscoreToCamelCase" value="true"/>-->
+<!--    </settings>-->
+    <!--    引入数据库链接的配置文件-->
+    <properties resource="jdbc.properties"/>
+
+    <!--    <settings>-->
+    <!--        &lt;!&ndash; 开启log4j来记录日志 &ndash;&gt;-->
+    <!--        <setting name="logImpl" value="log4j"/>-->
+    <!--    </settings>-->
+
+
+    <!--    别名-->
+    <typeAliases>
+        <typeAlias type="com.study.domain.Account" alias="account"/>
+        <package name="com.study.domain"/>
+    </typeAliases>
+
+    <!--继承分页助手插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+    <!--在MyBatis中可以配置多套环境，然后通过default来控制采用哪套环境，让配置变得灵活-->
+    <environments default="mysql">
+        <!--配置测试环境，不同的环境不同的id名字-->
+        <environment id="mysql">
+            <!--采取JDBC方式对数据库事务进行commit/rollback-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--采用连接池方式管理数据库连接-->
+            <dataSource type="POOLED">
+                <property name="driver" value="$jdbc.driver}"/>
+                <property name="url" value="${$jdbc.url}"/>
+                <property name="username" value="${$jdbc.username}"/>
+                <property name="password" value="${$jdbc.password}"/>
+            </dataSource>
+
+        </environment>
+        <environment id="prod">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://148.70.251.110:3306/babytun?useUnicode=yes&amp;characterEncoding=utf8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="931548241"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--    配置映射关系-->
+    <!--引入映射配置文件-->
+    <mappers>
+        <!--引入指定的映射配置文件 resource ：指定映射配置文件路径（名称）-->
+        <mapper resource=""/>
+        <!--指定mapper接口的所在路径-->
+        <package name="com.study.dao"/>
+    </mappers>
+</configuration>

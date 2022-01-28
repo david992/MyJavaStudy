@@ -9,6 +9,7 @@
         <module name="MyMaven" />
         <module name="Spring_IOC" />
         <module name="MyWebMaven" />
+        <module name="Sprint_mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -12,7 +12,6 @@
 <!--    sql片段抽取
         通过include标签使用
         <include refid="select-from"/>
-
     -->
     <sql id="select-from">
         select * from student

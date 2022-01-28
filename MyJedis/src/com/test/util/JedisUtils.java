@@ -33,8 +33,8 @@ public class JedisUtils {
         jpc = new JedisPoolConfig();
         jpc.setMaxTotal(maxTotal);//最大连接池
         jpc.setMaxIdle(MaxIdle);//最大活动连接数
-//        String host = "127.0.0.1";
-//        int port = 6379;
+        //String host = "127.0.0.1";
+        //int port = 6379;
         //连接池对象
         jp = new JedisPool(jpc, host, port);
     }

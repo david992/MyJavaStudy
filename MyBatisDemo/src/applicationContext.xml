@@ -11,7 +11,7 @@
 >
 
     <context:property-placeholder location="classpath:jdbc.properties"/>
-    <bean id="userDao" class="com.study.dao.impl.StudentMappermpl.xml">
+    <bean id="userDao" class="com.study.dao.impl.StudentMapperImpl">
         <property name="username" value="${username}"></property>
         <property name="username" value="${password}"></property>
     </bean>

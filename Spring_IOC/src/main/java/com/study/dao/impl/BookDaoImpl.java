@@ -43,6 +43,7 @@ public class BookDaoImpl implements BookDao {
     public void setHm(HashMap hm) {
         this.hm = hm;
     }
+    @Override
     public void save(){
         System.out.println(al+","+properties+","+arr+","+hs+","+hm);
     }

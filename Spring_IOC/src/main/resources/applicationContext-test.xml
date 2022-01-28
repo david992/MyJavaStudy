@@ -100,7 +100,6 @@
         <property name="password" value="123456"></property>
 
     </bean>
-<!--    后面的覆盖前面的-->
-    <import resource="applicationContext-test.xml"></import>
+
 
 </beans>

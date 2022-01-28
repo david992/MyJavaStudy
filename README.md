@@ -18,7 +18,7 @@ HttpSession    会话域 在当前会话返回内数据共享
 PageContext    页面域 在当前页面使用  
 
 
-基本数据类型  -*- bit(位)-byte(字节) 1byte = 1B = 8bit -*-  
+基本数据类型  -*- bit(位)-byte(字节) 8bit = 1byte = 1B -*-  
 byte    8位  
 short   16位  
 int     32位  

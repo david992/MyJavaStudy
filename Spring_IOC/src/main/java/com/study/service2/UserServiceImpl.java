@@ -1,9 +1,7 @@
-package com.study.service.impl;
+package com.study.service2;
 
 import com.study.dao.BookDao;
 import com.study.dao.UserDao;
-import com.study.service.UserService;
-import org.springframework.stereotype.Component;
 
 /**
  * @Program: MyJavaStudy
