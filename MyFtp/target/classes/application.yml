@@ -1,0 +1,7 @@
+sftp:
+  file-url:
+  host: 101.42.239.243
+  password: tudou123456..
+  path: /data/file/
+  port: 22
+  username: root
