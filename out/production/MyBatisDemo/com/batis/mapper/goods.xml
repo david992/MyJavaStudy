@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.batis.mapper.GoodsMapper">
+    <!--namespace对应某个命名空间，这样就知道去那个文件查找关联-->
+    <!--resultType：在SQL语句执行完成之后，会将每一个结果包装成指定的对象-->
+    <select id="selectAllGoods" resultType="com.batis.Entity.Goods">
+        select * from t_goods order by goods_id desc limit 10
+    </select>
+
+</mapper>
