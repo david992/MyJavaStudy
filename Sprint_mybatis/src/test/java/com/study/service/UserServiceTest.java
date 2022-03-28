@@ -5,6 +5,7 @@ import com.study.domain.Account;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -22,6 +23,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 //设定加载的spring上下文对应的值
 @ContextConfiguration(classes = SpringConfig.class)
 public class UserServiceTest {
+    BeanFactory bf;
     @Autowired
     private AccountService accountService;
     @Test
@@ -30,3 +32,4 @@ public class UserServiceTest {
     Assert.assertEquals("david",ac.getName());
     }
 }
+
