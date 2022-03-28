@@ -18,6 +18,7 @@
       <module name="demo" target="1.8" />
       <module name="MyJedis" target="1.8" />
       <module name="Servlet_demo2" target="1.8" />
+      <module name="Spring_Ioc_bean过滤加载" target="11" />
       <module name="Student_web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
