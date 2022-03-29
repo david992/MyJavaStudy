@@ -9,4 +9,8 @@ package com.study.service;
  */
 public interface UserService {
     public void save();
+    public void canshu(int i);
+    public int update();
+    public void delete();
+
 }

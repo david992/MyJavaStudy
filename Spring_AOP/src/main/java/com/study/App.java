@@ -17,7 +17,10 @@ public class App {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService userService = (UserService)ctx.getBean("userService");
-        userService.save();
+//        userService.save();
+//        userService.canshu(666);
+//        System.out.println("app .... "+userService.update());
+        userService.delete();
 
     }
 }
