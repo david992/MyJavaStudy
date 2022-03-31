@@ -15,7 +15,8 @@
 
 <!--    3.开启AOP命名空间 xmlns:aop-->
 
-
+<!--    ④：开启AOP注解驱动支持-->
+    <aop:aspectj-autoproxy/>
 
     <bean id="userService" class="com.study.service.Impl.UserServiceImpl"/>
 

@@ -2,6 +2,10 @@ package com.study.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
 
 /**
  * @author David
@@ -11,7 +15,14 @@ import org.aspectj.lang.ProceedingJoinPoint;
  * @date 2022/3/2821:42
  */
 // 1.定义一个通知类 在类中定义共性功能的方法
+@Component
+@Aspect //①：注解申明为通知类
 public class AopAdvice {
+
+    @Pointcut("execution(* *(..))")//② 注解申明切入点
+    public void pt(){} //用一个方法 代替xml中的id命名
+
+    @Before("pt()")//③ 注解申明切入点和通知的关系
     public void  function(){
         System.out.println("共性功能");
     }
