@@ -23,9 +23,17 @@ public class AopAdvice {
     public void pt(){} //用一个方法 代替xml中的id命名
 
     @Before("pt()")//③ 注解申明切入点和通知的关系
-    public void  function(){
-        System.out.println("共性功能");
+    public void  aop001_function(){
+        System.out.println("共性功能  ..  1");
     }
+
+    @Before("pt()")//③ 注解申明切入点和通知的关系
+    public void  aop002_function(){
+        System.out.println("共性功能  ..  2");
+    }
+
+
+
     public void  before(){
         System.out.println("before......");
     }
@@ -80,6 +88,5 @@ public class AopAdvice {
         }
         System.out.println("aroundThrowingTest after 22222222222222");
         return ret;
-
     }
 }

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.batis.mapper.GoodsMapper">
-    <!--namespace对应某个命名空间，这样就知道去那个文件查找关联-->
+    <!--namespace对应某个命名空间，这样就知道去那个文件查找关联，接口文件全路径-->
     <!--resultType：在SQL语句执行完成之后，会将每一个结果包装成指定的对象-->
     <select id="selectAllGoods" resultType="com.batis.Entity.Goods">
         select * from t_goods order by goods_id desc limit 10

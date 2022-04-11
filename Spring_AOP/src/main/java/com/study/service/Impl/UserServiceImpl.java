@@ -1,6 +1,7 @@
 package com.study.service.Impl;
 
 import com.study.service.UserService;
+import org.springframework.stereotype.Service;
 
 /**
  * @author David
@@ -9,6 +10,7 @@ import com.study.service.UserService;
  * @Description:
  * @date 2022/3/2821:26
  */
+@Service("userService")
 public class UserServiceImpl implements UserService {
     public void save(){
         //System.out.println("共性功能");
@@ -32,6 +34,4 @@ public class UserServiceImpl implements UserService {
         System.out.println("delete is runing ");
         int i= 1/0;
     }
-
-    ;
 }

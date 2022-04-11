@@ -1,5 +1,6 @@
 package com.study;
 
+import base.decorator.UserServiceImplDecorator;
 import com.study.service.Impl.UserServiceImpl;
 import com.study.service.UserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -17,10 +18,13 @@ public class App {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService userService = (UserService)ctx.getBean("userService");
+        UserService userService1 = new UserServiceImpl();
+        UserServiceImplDecorator userServiceImplDecorator = new UserServiceImplDecorator(userService1);
 //        userService.save();
 //        userService.canshu(666);
 //        System.out.println("app .... "+userService.update());
-        userService.delete();
+//        userService.delete();
+        userServiceImplDecorator.save();
 
     }
 }
