@@ -16,6 +16,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @ComponentScan("com.study")
 @EnableAspectJAutoProxy
+//@EnableAspectJAutoProxy(proxyTargetClass = false)
 public class SpringConfig {
 
 }

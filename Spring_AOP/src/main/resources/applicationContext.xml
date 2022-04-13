@@ -16,14 +16,19 @@
 <!--    3.开启AOP命名空间 xmlns:aop-->
 
 <!--    ④：开启AOP注解驱动支持-->
-    <aop:aspectj-autoproxy/>
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
 
     <bean id="userService" class="com.study.service.Impl.UserServiceImpl"/>
 
 <!--    2. 配置共性功能类为spring控制的资源-->
     <bean id="myAdvice" class="com.study.aop.AopAdvice"/>
+
 <!--    4.配置aop-->
-    <aop:config>
+<!--    默认false:JDKproxy
+            true:Cglib
+            -->
+    <aop:config proxy-target-class="true">
+
 <!--    5.配置切入点    -->
         <!--
         关键字(访问修饰符 返回值 包名.类名.方法名(参数) 异常名)

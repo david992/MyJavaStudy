@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     public void save(){
         //System.out.println("共性功能");
-        System.out.println( "userService is runing");
+        System.out.println( "base userService is runing");
 //        int i = 1/0;
 
 
