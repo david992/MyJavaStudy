@@ -8,11 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Spring_AOP" />
-        <module name="MyMaven" />
-        <module name="Spring_IOC" />
+        <module name="Spring_shiwu" />
         <module name="MyWebMaven" />
         <module name="MyFtp" />
         <module name="Sprint_mybatis" />
+        <module name="MyMaven" />
+        <module name="Spring_IOC" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
