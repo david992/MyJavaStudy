@@ -19,7 +19,7 @@ import java.util.List;
 public interface AccountDao {
     @Insert("insert into account(name,money) values(#{name},#{money})")
     void save(Account account);
-    @Delete(" delete from account where id =#{id}")
+    @Delete(" delete from account where id = #{id}")
     void delete(Integer id);
     @Update("update account set name =#{name},money=#{money} where id =#{id}")
     void update(Account account);

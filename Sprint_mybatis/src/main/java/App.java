@@ -17,14 +17,14 @@ import javax.swing.*;
  */
 public class App {
     public static void main(String[] args) {
-//        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-//        AccountService accountService = (AccountService) ctx.getBean("accountService");
-//        Account ac = accountService.findById(1);
-//        System.out.println(ac);
-
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         AccountService accountService = (AccountService) ctx.getBean("accountService");
         Account ac = accountService.findById(1);
         System.out.println(ac);
+
+//        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+//        AccountService accountService = (AccountService) ctx.getBean("accountService");
+//        Account ac = accountService.findById(1);
+//        System.out.println(ac);
     }
 }
