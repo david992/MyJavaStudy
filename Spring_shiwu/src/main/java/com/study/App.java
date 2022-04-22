@@ -1,6 +1,7 @@
 package com.study;
 
 import com.study.service.AccountService;
+import com.study.service_aop.AccountServiceAop;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,8 +15,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class App {
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-        AccountService service = (AccountService) ctx.getBean("accountService");
-        service.transfer("david","lihui",100);
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext_aop.xml");
+        AccountServiceAop service = (AccountServiceAop) ctx.getBean("accountService");
+        service.transferaop("david","lihui",100);
     }
 }

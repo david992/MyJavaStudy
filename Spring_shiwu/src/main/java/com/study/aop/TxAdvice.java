@@ -1,45 +1,40 @@
-package com.study.service.impl;
+package com.study.aop;
 
-import com.study.dao1.AccountDao;
-import com.study.service.AccountService;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
-import org.springframework.transaction.support.DefaultTransactionStatus;
 
 import javax.sql.DataSource;
 
 /**
  * @Program: MyJavaStudy
- * @ClassName: AccountServiceImpl
+ * @ClassName: TxAdvice
  * @Author: David_J
  * @Copyright David
- * @Date: 2022-04-14 16:13
+ * @Date: 2022-04-22 17:26
  * @Version: V1.0
  */
-public class AccountServiceImpl implements AccountService {
-    private AccountDao accountDao;
-    public void setAccountDao(AccountDao accountdao){
-        this.accountDao=accountdao;
-    }
+public class TxAdvice {
 
     private DataSource dataSource;
-
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    public void transfer(String outName, String toName, double money){
+    public Object transferManager(ProceedingJoinPoint pjp) throws Throwable {
         //开启事务
         DataSourceTransactionManager ptm = new DataSourceTransactionManager(dataSource);
         //定义实务
         DefaultTransactionDefinition td = new DefaultTransactionDefinition();
         //创建事务状态
         TransactionStatus ts = ptm.getTransaction(td);
-        accountDao.inMoney(outName,money);
-        accountDao.outMoney(toName,money);
+
+        Object ret = pjp.proceed(pjp.getArgs());
+
         //提交
         ptm.commit(ts);
 
+        return ret;
     }
 }
