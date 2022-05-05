@@ -47,12 +47,23 @@
     <!--    定义事务管理的通知类-->
     <tx:advice id="txAdvice" transaction-manager="txManager">
         <tx:attributes>
+            <tx:method name="*" read-only="false"/>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="find*" read-only="true"/>
             <tx:method name="transferaop" read-only="false"/>
         </tx:attributes>
     </tx:advice>
     
     <aop:config>
-        <aop:pointcut id="pt" expression="execution(* * ..transferaop(..))"/>
+        <!--
+            关键字(访问修饰符 返回值 包名.类名.方法名(参数) 异常名)
+            egg:execution(pubilc User com.study.service.UserService.save(int))
+            切入点表达式（通配符）
+            *   单个独立的任意符号
+            ..  多个连续的任意符号
+            +   专用于匹配子类类型
+            -->
+        <aop:pointcut id="pt" expression="execution(* com.study.service_aop.*Service.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pt"/>
     </aop:config>
 

@@ -15,6 +15,8 @@ import javax.sql.DataSource;
  * @Date: 2022-04-22 17:26
  * @Version: V1.0
  */
+
+// 使用声明式事务时候  可以省略该文件
 public class TxAdvice {
 
     private DataSource dataSource;
