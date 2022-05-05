@@ -15,7 +15,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class App {
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext_aop.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext_shengmingshiwu.xml");
         AccountServiceAop service = (AccountServiceAop) ctx.getBean("accountService");
         service.transferaop("david","lihui",100);
     }

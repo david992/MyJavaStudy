@@ -24,6 +24,7 @@ public class AccountServiceImplAop implements AccountServiceAop {
 
     public void transferaop(String outName, String toName, double money){
         accountDao.inMoney(outName,money);
+        int i = 1/0;
         accountDao.outMoney(toName,money);
     }
 }
