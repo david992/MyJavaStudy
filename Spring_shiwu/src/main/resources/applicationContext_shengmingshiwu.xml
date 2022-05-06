@@ -41,6 +41,7 @@
         <property name="basePackage" value="com.study.dao1"/>
     </bean>
 
+    <!--    设定实物管理器 -->
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource1" />
     </bean>
@@ -51,6 +52,23 @@
             <tx:method name="get*" read-only="true"/>
             <tx:method name="find*" read-only="true"/>
             <tx:method name="transferaop" read-only="false"/>
+
+            <!--
+                timeout   超时 -1 表示不限制
+                isolation 隔离级
+                rollback-for        遇到特定异常回滚
+                no-rollback-for     遇到特定异常不回滚
+                propagation
+            -->
+            <tx:method
+                    name="transferaop"
+                    read-only="false"
+                    timeout="-1"
+                    isolation="DEFAULT"
+                    rollback-for=""
+                    no-rollback-for=""
+                    propagation="REQUIRED"
+                />
         </tx:attributes>
     </tx:advice>
     
