@@ -10,6 +10,6 @@
     </update>
 
     <update id="outMoney">
-        update account set money = money + #{money} where name = #{name}
+        update account set money = money - #{money} where name = #{name}
     </update>
 </mapper>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        https://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd"
+>
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="accountService" class="com.study.service_aop.impl.AccountServiceImplAop">
+        <property name="accountDao" ref="accountDao"/>
+<!--        <property name="dataSource" ref="dataSource"/>-->
+    </bean>
+
+    <!--    定义数据源-->
+    <bean id="dataSource1" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--    spring 整合mybatis后控制的创建连接用的对象-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource1"/>
+        <property name="typeAliasesPackage" value="com.study.domain"/>
+    </bean>
+
+    <!--    加载mybatis映射配置的扫描，将其作为spring的bean进行管理-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.study.dao1"/>
+    </bean>
+
+
+    <!--    设定实物管理器 -->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource1" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="txManager"/>
+
+<!--    <bean id="txAdvice" class="com.study.aop.TxAdvice">-->
+<!--        <property name="dataSource" ref="dataSource1"/>-->
+<!--    </bean>-->
+
+<!--    -->
+<!--    <aop:config>-->
+<!--        <aop:pointcut id="pt" expression="execution(* * ..transferaop(..))"/>-->
+<!--        <aop:aspect ref="txAdvice">-->
+<!--            <aop:around method="transferManager" pointcut-ref="pt"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+</beans>
