@@ -9,6 +9,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import redis.clients.jedis.Jedis;
 
 /**
  * @Program: MyJavaStudy
@@ -30,6 +31,14 @@ public class UserServiceTest {
     public void testFindByID(){
     Account ac = accountService.findById(1);
     Assert.assertEquals("david",ac.getName());
+    }
+
+    @Test
+    public void testRedis(){
+        Jedis jedis = new Jedis("127.0.0.1",36379);
+        System.out.println(jedis);
+        jedis.set("name","david");
+        jedis.close();
     }
 }
 

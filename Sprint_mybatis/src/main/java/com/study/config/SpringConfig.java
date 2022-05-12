@@ -1,9 +1,6 @@
 package com.study.config;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 
 /**
  * @Program: MyJavaStudy
@@ -16,7 +13,10 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration //表示该核心配置类代替xml配置文件
 @ComponentScan("com.study")//开启扫描
-@PropertySource("classpath:jdbc.properties")
+//@PropertySource({"classpath:jdbc.properties",})
+//@PropertySource({"classpath:jdbc.properties","classpath:redis.properties"})
+@PropertySources({  @PropertySource("classpath:jdbc.properties"),
+                    @PropertySource("classpath:redis.properties")})
 @Import({JDBCConfig.class,MyBatisConfig.class})
 public class SpringConfig {
 }

@@ -1,8 +1,12 @@
 package com.study.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import javax.sql.DataSource;
 
 /**
  * @Program: MyJavaStudy
@@ -33,4 +37,11 @@ public class JDBCConfig {
         ds.setUrl(url);
         return ds;
     }
+
+    @Bean("jdbcTemplate")
+    public JdbcTemplate getJdbcTemplete (@Autowired DataSource dataSource){
+        return new JdbcTemplate(dataSource);
+    }
+
+
 }
