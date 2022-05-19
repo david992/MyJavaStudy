@@ -11,9 +11,11 @@
         <module name="Spring_shiwu" />
         <module name="MyWebMaven" />
         <module name="MyFtp" />
+        <module name="Spring_Redistemplate" />
         <module name="Sprint_mybatis" />
         <module name="MyMaven" />
         <module name="Spring_IOC" />
+        <module name="Spring_Jdbctemplate" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -39,7 +39,7 @@ public class JDBCConfig {
     }
 
     @Bean("jdbcTemplate")
-    public JdbcTemplate getJdbcTemplete (@Autowired DataSource dataSource){
+    public JdbcTemplate getJdbcTemplate (@Autowired DataSource dataSource){
         return new JdbcTemplate(dataSource);
     }
 

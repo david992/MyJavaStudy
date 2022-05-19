@@ -1,6 +1,6 @@
 package com.study.service.impl;
 
-import com.study.dao.AccountDao;
+import com.study.dao123.AccountDao;
 import com.study.domain.Account;
 import com.study.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +36,7 @@ public class AccountServiceImpl implements AccountService {
         accountDao.delete(id);
 
     }
+
 
     @Override
     public void update(Account account) {

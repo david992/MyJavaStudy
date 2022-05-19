@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="org.springframework.beans.factory.annotation.Autowired" />
+    </list>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/demo" />
@@ -17,6 +22,8 @@
         <option value="$PROJECT_DIR$/MyFtp/pom.xml" />
         <option value="$PROJECT_DIR$/Spring_AOP/pom.xml" />
         <option value="$PROJECT_DIR$/Spring_shiwu/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Jdbctemplate/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_redistemplate/pom.xml" />
       </list>
     </option>
   </component>

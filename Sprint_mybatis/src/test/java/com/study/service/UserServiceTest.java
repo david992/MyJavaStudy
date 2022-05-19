@@ -33,12 +33,7 @@ public class UserServiceTest {
     Assert.assertEquals("david",ac.getName());
     }
 
-    @Test
-    public void testRedis(){
-        Jedis jedis = new Jedis("127.0.0.1",36379);
-        System.out.println(jedis);
-        jedis.set("name","david");
-        jedis.close();
-    }
+
+
 }
 
