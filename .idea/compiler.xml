@@ -12,18 +12,14 @@
         <module name="MyWebMaven" />
         <module name="MyFtp" />
         <module name="Spring_Redistemplate" />
-        <module name="Sprint_mybatis" />
         <module name="MyMaven" />
         <module name="Spring_IOC" />
         <module name="Spring_Jdbctemplate" />
+        <module name="Spring_mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="demo" target="1.8" />
-      <module name="MyJedis" target="1.8" />
-      <module name="Servlet_demo2" target="1.8" />
-      <module name="Spring_Ioc_bean过滤加载" target="11" />
-      <module name="Student_web" target="1.8" />
+      <module name="MyJedis" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

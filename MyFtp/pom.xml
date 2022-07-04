@@ -16,9 +16,9 @@
 
 <!--    properties属性配置主要是存放依赖的版本号，可以自定义，相对于定义了一个变量-->
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
         <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <spring-cloud.version>2020.0.4</spring-cloud.version>
     </properties>
 

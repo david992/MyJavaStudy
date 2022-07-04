@@ -42,7 +42,7 @@
         <aop:pointcut id="pt" expression="execution(* *..*(..))"/>
         <aop:pointcut id="pt3" expression="execution(* *..canshu(..))"/>
         <aop:pointcut id="pt4" expression="execution(* com..*Service+.delete(..))"/>
-
+        
     <!--    6.配置切面 （切入点与通知的关系）    -->
         <aop:aspect ref="myAdvice">
         <!--    7.配置具体的切入点对应通知中的那个方法        -->
